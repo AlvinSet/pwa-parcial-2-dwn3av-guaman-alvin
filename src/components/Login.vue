@@ -1,7 +1,7 @@
 <template>
   <main class="form-signin w-100 m-auto">
     <form>
-        <h1 class="h3 mb-3 fw-normal">Inicie sesión</h1>
+        <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
 
         <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com">
