@@ -23,6 +23,8 @@
 </main>
 </template>
 <script>
+import { loginWithEmailAndPassword } from '@/firebase/auth.js';
+
 export default {
   name: "LoginComponent",
     data() {
@@ -35,6 +37,15 @@ export default {
   methods: {
     login() {
       console.log(this.email , this.password);
+      loginWithEmailAndPassword(this.email, this.password)
+        .then(response => {
+          console.log('Inicio de sesión exitoso', response);
+          // Realiza otras acciones después del inicio de sesión si es necesario
+        })
+        .catch(error => {
+          console.error('Error al iniciar sesión:', error.message);
+          // Maneja el error de autenticación aquí
+        });
     },
   },
 };
