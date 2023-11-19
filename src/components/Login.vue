@@ -18,7 +18,7 @@
                 Recordar
             </label>
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit" @click="login">Iniciar sesión</button>
+        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
     </form>
 </main>
 </template>
@@ -35,8 +35,16 @@ export default {
   },
 
   methods: {
-    login() {
-      loginWithEmailAndPassword(this.email, this.password)
+    async login() {
+      try {
+        const response = await loginWithEmailAndPassword(this.email, this.password);
+        console.log('Inicio de sesión exitoso', response.user);
+
+        // Redirige a la página deseada después de iniciar sesión
+        this.$router.push({ name: 'home' });
+      } catch (error) {
+        console.error('Error al iniciar sesión:', error.message);
+      }
 
     },
   },
