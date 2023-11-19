@@ -32,7 +32,7 @@ export default {
         await logout();
         // Redirige a la página de inicio después de cerrar sesión
         console.log('Se cerró la sesion correctamente');
-        this.$router.push({ name: 'login' });
+        
       } catch (error) {
         console.error('Error al cerrar sesión:', error.message);
       }

@@ -18,9 +18,7 @@ export const loginWithEmailAndPassword = async (email, password) => {
 
 
 export const observeAuthState = (callback) => {
-    return onAuthStateChanged(auth, (user) => {
-        callback(user);
-    });
+    return onAuthStateChanged(auth, callback);
 };
 
 export const logout = async () => {
