@@ -47,6 +47,10 @@ export default {
     };
   },
   methods: {
+
+    saveProductsListLocal(){
+            localStorage.setItem("products", JSON.stringify(this.products))
+        },
     
     async showDetails(product)
         {
@@ -70,6 +74,7 @@ export default {
             fetch ('https://api.escuelajs.co/api/v1/products?offset=20&limit=30')
             .then (response => response.json())
             .then(data => {this.products = data;
+            this.saveProductsListLocal();
             })
             
         }
