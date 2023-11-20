@@ -48,6 +48,16 @@ export default {
   },
   methods: {
 
+    getLocalList(){
+
+      const products = localStorage.getItem("products");
+
+      if(products){
+        this.products = JSON.parse(products)
+      }
+
+    },
+
     saveProductsListLocal(){
             localStorage.setItem("products", JSON.stringify(this.products))
         },
@@ -70,6 +80,8 @@ export default {
   },
   mounted() {
     
+    this.getLocalList();
+
      if(this.products.length === 0){
             fetch ('https://api.escuelajs.co/api/v1/products?offset=20&limit=30')
             .then (response => response.json())
