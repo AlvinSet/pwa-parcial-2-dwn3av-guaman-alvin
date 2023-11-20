@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/cart">Carrito</router-link>
       <button v-if="user" @click="logout">Logout</button>
     </nav>
     <router-view :user="user"/>

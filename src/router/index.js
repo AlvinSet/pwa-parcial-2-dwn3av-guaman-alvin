@@ -2,11 +2,18 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
+import CartView from '../views/CartView.vue'
 import { observeAuthState } from '@/firebase/auth.js';
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/cart',
+    name: 'cart',
+    component: CartView,
+    meta: { requiresAuth: true },
+  },
   {
     path: '/',
     name: 'home',

@@ -11,6 +11,8 @@
                     <h2 class="card-title">{{product.title}}</h2>
                     <a @click="showDetails(product)" class="btn  boton-color" data-bs-toggle="modal"
                         data-bs-target="#productModal">Ver Detalles </a>
+                    <a @click="addToCart(product)" class="btn  boton-color" 
+                        >Agregar al carrito </a>
                 </div>
             </div>
    </div>
@@ -47,6 +49,9 @@ export default {
     };
   },
   methods: {
+    addToCart(product) {
+      console.log(product)
+    },
 
     getLocalList(){
 
