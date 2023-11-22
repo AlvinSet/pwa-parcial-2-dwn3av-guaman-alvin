@@ -50,7 +50,8 @@ export default {
   },
   methods: {
     addToCart(product) {
-      console.log(product)
+      this.$root.$emit("add-to-cart", product);
+      console.log(product);
     },
 
     getLocalList(){
