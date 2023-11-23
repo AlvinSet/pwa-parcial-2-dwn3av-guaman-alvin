@@ -1,19 +1,19 @@
 <template>
 
 
-  <Products />
+  <Characters />
 
 </template>
 
 <script>
 // @ is an alias to /src
 
-import Products from '@/components/Products.vue';
+import Characters from '@/components/Characters.vue';
 
 export default {
 
   components: {
-    Products
+    Characters
   }
 }
 </script>

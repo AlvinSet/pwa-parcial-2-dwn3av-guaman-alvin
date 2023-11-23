@@ -1,0 +1,43 @@
+
+
+h1{
+    font-size: 5rem;
+    background-color: rgb(68, 173, 89);
+    color: aliceblue;
+
+}
+ul li{
+    list-style-type: none;
+}
+.img-modal{
+    height: 20vw;
+    width: auto;
+}
+
+.boton-color{
+    background-color: rgb(68, 173, 89);
+    color: aliceblue;
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-color:hover{
+    transform: scale(1.1);
+    background-color: rgb(68, 173, 89);
+    color: aliceblue;
+
+}
+/* Media queries para dispositivos pequeños (como teléfonos) */
+@media (max-width: 576px) {
+
+}
+
+/* Media queries para dispositivos medianos (como tabletas) */
+@media (min-width: 577px) and (max-width: 992px) {
+    
+}
+
+
+/* Media queries para dispositivos grandes (como computadoras) */
+@media (min-width: 993px) {
+
+}

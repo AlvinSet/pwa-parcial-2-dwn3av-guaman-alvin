@@ -1,19 +1,19 @@
 <template>
 
 
-  <Cart />
+  <Favorites />
 
 </template>
 
 <script>
 // @ is an alias to /src
 
-import Cart from '@/components/Cart.vue';
+import Favorites from '@/components/Favorites.vue';
 
 export default {
 
   components: {
-    Cart
+    Favorites
   }
 }
 </script>

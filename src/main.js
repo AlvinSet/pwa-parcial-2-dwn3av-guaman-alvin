@@ -13,6 +13,7 @@ if ("serviceWorker" in navigator) {
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import "./assets/styles/styles.css";
 
 Vue.config.productionTip = false
 

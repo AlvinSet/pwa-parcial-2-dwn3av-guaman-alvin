@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <nav>
+    <nav v-if="user">
       <router-link to="/">Home</router-link> |
-      <router-link to="/cart">Carrito</router-link>
-      <button v-if="user" @click="logout">Logout</button>
+      <router-link to="/favorites">Favoritos</router-link>
+      <button  @click="logout">Logout</button>
     </nav>
     <router-view :user="user"/>
   </div>

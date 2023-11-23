@@ -1,7 +1,7 @@
 <template>
   <div>
     <header>
-      <h1>Bienvenido a mi Biblioteca Virtual</h1>
+      <h1>Rick anAppd Morty </h1>
     </header>
 
     
