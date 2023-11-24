@@ -48,7 +48,6 @@ export default {
         // Redirige a la página deseada después de iniciar sesión
         this.$router.push({ name: 'home' });
       } catch (error) {
-        console.error('Error al iniciar sesión:', error.message);
         // Actualiza el mensaje de error
         this.error = 'Credenciales incorrectas. Por favor, inténtelo de nuevo.';
       }
