@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Carrito de Compras</h2>
+    <h2>Personajes Favoritos</h2>
 
     <div v-if="favorites.length === 0">
       <p>El carrito está vacío</p>
