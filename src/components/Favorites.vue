@@ -10,7 +10,7 @@
        <ul>
         <li v-for="(character, index) in favorites" :key="character.id">
           {{ character.name }} 
-          <button @click="removeFromFavorites(index)">Eliminar</button>
+          <button class="btn btn-borrar" @click="removeFromFavorites(index)">Eliminar</button>
         </li>
       </ul>
       </div>

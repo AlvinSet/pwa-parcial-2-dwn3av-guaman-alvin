@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header>
-      <h1>Rick anAppd Morty </h1>
-    </header>
+    
 
     
     
@@ -10,7 +8,7 @@
     
 
     <footer>
-      <p>© 2023 Biblioteca Virtual</p>
+      <p>© 2023 Rick and Morty App</p>
     </footer>
   </div>
 </template>

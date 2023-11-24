@@ -9,10 +9,13 @@
                 <img :src="character.image" class="card-img-top" :alt="character.name">
                 <div class="card-body d-flex flex-column align-items-center justify-content-center">
                     <h2 class="card-title">{{character.name}}</h2>
-                    <a @click="showDetails(character)" class="btn  boton-color" data-bs-toggle="modal"
+                    <div >
+                    <a @click="showDetails(character)" class="btn btn-style" data-bs-toggle="modal"
                         data-bs-target="#characterModal">Ver Detalles </a>
-                    <a @click="addToFavorites(character)" class="btn  boton-color" 
-                        >Agregar a tus Favoritos </a>
+                    <a @click="addToFavorites(character)" class="btn mt-2 btn-style" 
+                        >Agregar a  Favoritos </a>
+                    </div>
+                    
                 </div>
             </div>
         </div>

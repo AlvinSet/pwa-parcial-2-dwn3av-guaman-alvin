@@ -1,7 +1,7 @@
 <template>
   <main class="form-signin w-100 m-auto">
     <form  @submit.prevent="login">
-        <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+        <h2 class="h3 mb-3 fw-normal">Iniciar Sesión</h2>
 
         <div class="form-floating">
             <input v-model="email" type="email" class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com">
@@ -18,7 +18,7 @@
                 Recordar
             </label>
         </div>
-        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
+        <button class="btn boton-color w-100 py-2" type="submit">Iniciar sesión</button>
     </form>
 </main>
 </template>

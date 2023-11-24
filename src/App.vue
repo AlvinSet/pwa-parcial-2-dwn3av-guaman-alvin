@@ -1,9 +1,12 @@
 <template>
   <div id="app">
+  <header>
+      <h1>Rick and Morty App</h1>
+    </header>
     <nav v-if="user">
       <router-link to="/">Home</router-link> |
-      <router-link to="/favorites">Favoritos</router-link>
-      <button  @click="logout">Logout</button>
+      <router-link to="/favorites">Favoritos</router-link> |
+      <button class="logout-button"  @click="logout">Logout</button>
     </nav>
     <router-view :user="user"/>
   </div>
@@ -61,5 +64,11 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+button.logout-button{
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 </style>
