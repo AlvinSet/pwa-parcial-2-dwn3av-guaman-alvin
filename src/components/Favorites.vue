@@ -41,26 +41,20 @@ export default {
       // Actualiza el carrito en el localStorage
       localStorage.setItem("favorites", JSON.stringify(this.favorites));
     },
-   isFavorite(character) {
+    isFavorite(character) {
     return this.favorites.some(favorite => favorite.id === character.id);
+  },
+    addToFavorites(character) {
+    if (!this.isFavorite(character)) {
+      this.favorites.push(character);
+      localStorage.setItem("favorites", JSON.stringify(this.favorites));
+    }
   },
   },
   created() {
-
-    
-
     // Escucha el evento 'add-to-favorites' emitido por ProductsComponent
 
-    this.$root.$on("add-to-favorites", (character) => {
-
-      if(!this.isFavorite(character)){
-        // Agrega el producto al carrito
-      this.favorites.push(character);
-      // guarda el carrito en localStorage aquí si lo deseas
-      localStorage.setItem("favorites", JSON.stringify(this.favorites));
-      }
-      
-    });
+    this.$root.$on("add-to-favorites", this.addToFavorites);
 
     // Carga el carrito desde localStorage al iniciar
     const storedFavorites = localStorage.getItem("favorites");
