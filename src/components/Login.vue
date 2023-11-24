@@ -19,6 +19,10 @@
             </label>
         </div>
         <button class="btn boton-color w-100 py-2" type="submit">Iniciar sesión</button>
+        <!-- Mostrar el mensaje de error si existe -->
+      <div v-if="error" class="alert alert-danger mt-3" role="alert">
+        {{ error }}
+      </div>
     </form>
 </main>
 </template>
@@ -31,6 +35,7 @@ export default {
     return {
       email: '',
       password: '',
+      error: null,
     };
   },
 
@@ -44,6 +49,8 @@ export default {
         this.$router.push({ name: 'home' });
       } catch (error) {
         console.error('Error al iniciar sesión:', error.message);
+        // Actualiza el mensaje de error
+        this.error = 'Credenciales incorrectas. Por favor, inténtelo de nuevo.';
       }
 
     },
