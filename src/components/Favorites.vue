@@ -7,9 +7,18 @@
     </div>
 
     <div v-else>
-       <ul>
-        <li v-for="(character, index) in favorites" :key="character.id">
-          {{ character.name }} 
+       <ul >
+        <li v-for="(character, index) in favorites" :key="character.id" class="mt-3 ">
+          <div class="favorite-cont d-flex justify-content-center">
+          <img :src="character.image" class="card-img-top img-modal img-fav" :alt="character.name">
+          <ol>
+          <h3>
+          <li>{{ character.name }}</li>
+          </h3>
+          <li>Estado: {{ character.status }} </li>
+          <li>Género: {{ character.gender }} </li>
+          </ol>
+          </div>
           <button class="btn btn-borrar" @click="removeFromFavorites(index)">Eliminar</button>
         </li>
       </ul>
