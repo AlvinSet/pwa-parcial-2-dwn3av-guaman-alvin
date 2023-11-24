@@ -52,13 +52,28 @@ export default {
     return {
       characters: [],
       characterDetails: [],
-
+      historial:[],
     };
   },
   methods: {
+
+    saveCharacterLocal(data){
+            const character = data;
+            const historial = JSON.parse(localStorage.getItem("historial"));
+
+            if(historial){
+                historial.push(character);
+                this.historial = historial;
+            } else {
+                this.historial.push(character);
+            }
+
+            localStorage.setItem("historial", JSON.stringify(this.historial));
+        },
+
     addToFavorites(character) {
       this.$root.$emit("add-to-favorites", character);
-      console.log(character);
+      console.log("Añadido a fav");
     },
 
     getLocalList(){
@@ -82,6 +97,7 @@ export default {
                     const response = await fetch(`https://rickandmortyapi.com/api/character/${character.id}`);
                     const data = await response.json();
                     this.characterDetails = data;
+                    this.saveCharacterLocal(data);
           
                 } catch (error) {
                     console.error('Error fetching character details:', error);

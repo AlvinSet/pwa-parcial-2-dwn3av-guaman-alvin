@@ -48,6 +48,7 @@ export default {
     if (!this.isFavorite(character)) {
       this.favorites.push(character);
       localStorage.setItem("favorites", JSON.stringify(this.favorites));
+      console.log('Añadido a favoritos:', character);
     }
   },
   },
@@ -56,7 +57,7 @@ export default {
 
     this.$root.$on("add-to-favorites", this.addToFavorites);
 
-    // Carga el carrito desde localStorage al iniciar
+    // Carga desde localStorage al iniciar
     const storedFavorites = localStorage.getItem("favorites");
     if (storedFavorites) {
       this.favorites = JSON.parse(storedFavorites);
