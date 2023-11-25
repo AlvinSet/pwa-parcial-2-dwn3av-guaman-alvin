@@ -30,7 +30,8 @@ self.addEventListener("fetch", (event) => {
 
     const request = event.request;
 
-    const networkResponse = fetch(request)
+    event.respondWith(
+        fetch(request)
         .then((networkResponse) => {
 
             if (networkResponse.ok) {
@@ -38,11 +39,12 @@ self.addEventListener("fetch", (event) => {
                 console.log("Guardando en la caché:", request.url);
 
                 const clonedResponse = networkResponse.clone();
-                caches.open(CACHE_NAME).then((cache) => {
+                return caches.open(CACHE_NAME)
+                        .then((cache) => {
 
-                    cache.put(request, clonedResponse);
-                    return networkResponse;
-                });
+                            cache.put(request, clonedResponse);
+                            return networkResponse;
+                        });
 
             }
             return networkResponse;
@@ -50,7 +52,6 @@ self.addEventListener("fetch", (event) => {
         .catch((error) => {
             console.error("Error en la solicitud porque no hay internet y se usara el cache:");
             return caches.match(request);
-        });
-
-    event.respondWith(networkResponse);
+        })
+    );
 });
