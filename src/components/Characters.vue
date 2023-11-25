@@ -2,7 +2,33 @@
   <div>
     <h2>Listado de Personajes</h2>
 
+    <div class="d-flex justify-content-center">
+                <a class="btn  boton-color mt-3" data-bs-toggle="modal" data-bs-target="#historialModal">Historial</a>
+    </div>
 
+    <div class="modal" id="historialModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content ">
+                        <div class="modal-header ">
+                            <h3 class="modal-title text-center">Historial: </h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div>
+                            <ul class="list-group">
+                                <li class="list-group-item" v-for="character in historial " :key="character.id">
+                                    {{ character.name }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" @click="clearHistorial">Borrar
+                                Historial</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                >Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <div class="d-flex flex-wrap container justify-content-between mt-2">
             <div class="card col-4 mt-3 mb-3" style="width: 18rem;" v-for="character in characters" :key="character.id">
@@ -56,6 +82,11 @@ export default {
     };
   },
   methods: {
+
+    clearHistorial() {
+            localStorage.removeItem('historial');
+            this.historial = [];
+        },
 
     saveCharactersListLocal(){
             localStorage.setItem("characters", JSON.stringify(this.characters))
