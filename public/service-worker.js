@@ -9,6 +9,8 @@ const urlsToCache = [
     "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js",
     "https://rickandmortyapi.com/api/character?page=1",
     "/icons/favicon.png",
+    "/icons/icon512.png",
+    "/icons/icon192.png",
 
 ];
 
