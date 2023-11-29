@@ -10,7 +10,7 @@
     </nav>
     <router-view :user="user"/>
     <div class="row sticky" >
-        <button id="install" type="button" class="btn btn-primary">Instalar aplicación</button>
+        <button @click="installApp" id="install" type="button" class="btn btn-primary">Instalar aplicación</button>
     </div>
   </div>
   
@@ -44,6 +44,17 @@ export default {
       } catch (error) {
         console.error('Error al cerrar sesión:', error.message);
       }
+    },
+    installApp(){
+      if(this.eventoDeInstalacion !=null){
+        this.eventoDeInstalacion.prompt()
+          .then(({outcome}) => {
+            if(outcome === "accepted"){
+              console.log("se instaló");
+            } else {console.log("no se instaló");}
+          });
+      }else {console.log("no se puede instalar");}
+
     },
   },
   mounted(){
