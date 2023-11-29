@@ -42,8 +42,8 @@ export default {
   methods: {
     async login() {
       try {
-        await loginWithEmailAndPassword(this.email, this.password);
-        // console.log('Inicio de sesión exitoso', response.user);
+        const response = await loginWithEmailAndPassword(this.email, this.password);
+        console.log('Inicio de sesión exitoso', response.user);
 
         // Redirige a la página deseada después de iniciar sesión
         this.$router.push({ name: 'home' });
