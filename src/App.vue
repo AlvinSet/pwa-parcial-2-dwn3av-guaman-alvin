@@ -10,7 +10,7 @@
     </nav>
     <router-view :user="user"/>
     <div class="row sticky" >
-        <button @click="installApp" id="install" type="button" class="btn btn-primary"  v-if="instalacionPendiente">Instalar aplicación</button>
+        <button @click="installApp" id="install" type="button" class="btn boton-install"  v-if="instalacionPendiente">Instalar aplicación</button>
     </div>
   </div>
   

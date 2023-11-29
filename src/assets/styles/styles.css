@@ -43,7 +43,17 @@ a{text-decoration: none;}
     color: aliceblue;
     transition: transform 0.3s ease-in-out;
 }
+.boton-install{
+    background-color: rgb(220, 226, 220);
+    color: rgb(0, 0, 0);
+    transition: transform 0.3s ease-in-out;
+}
+.boton-install:hover{
+    transform: scale(1.1);
+    background-color: rgb(220, 226, 220);
+    color: rgb(0, 0, 0);
 
+}
 .boton-color:hover{
     transform: scale(1.1);
     background-color: rgb(68, 173, 89);
