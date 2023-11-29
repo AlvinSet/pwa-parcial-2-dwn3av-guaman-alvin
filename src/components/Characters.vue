@@ -116,12 +116,15 @@ export default {
 
     getLocalList(){
 
-      const characters = localStorage.getItem("characters");
+    const characters = localStorage.getItem("characters");
+    const historial = localStorage.getItem("historial");
 
-      if(characters){
+    if(characters){
         this.characters = JSON.parse(characters)
-      }
-
+    }
+    if (historial){
+                this.historial = JSON.parse(historial)
+            }
     },
 
     getCharacterHistorial(id){
