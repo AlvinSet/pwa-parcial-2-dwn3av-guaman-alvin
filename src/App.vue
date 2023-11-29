@@ -10,7 +10,7 @@
     </nav>
     <router-view :user="user"/>
     <div class="row sticky" >
-        <button @click="installApp" id="install" type="button" class="btn btn-primary">Instalar aplicación</button>
+        <button @click="installApp" id="install" type="button" class="btn btn-primary"  v-if="instalacionPendiente">Instalar aplicación</button>
     </div>
   </div>
   
@@ -23,6 +23,7 @@ export default {
   name: 'App',
   data() {
     return {
+      instalacionPendiente: true,
       eventoDeInstalacion: null,
       user: null,
     };
@@ -50,7 +51,7 @@ export default {
         this.eventoDeInstalacion.prompt()
           .then(({outcome}) => {
             if(outcome === "accepted"){
-              console.log("se instaló");
+              this.instalacionPendiente = false;
             } else {console.log("no se instaló");}
           });
       }else {console.log("no se puede instalar");}
@@ -60,8 +61,12 @@ export default {
   mounted(){
     window.addEventListener("beforeinstallprompt", (event) => {
                 this.eventoDeInstalacion = event;
-                console.log("evento de instalación");
+                this.instalacionPendiente = true;
             });
+
+    if(this.eventoDeInstalacion == null){
+      this.instalacionPendiente = false;
+    }
   },
 };
 </script>
