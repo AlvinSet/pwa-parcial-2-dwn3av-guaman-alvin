@@ -9,7 +9,11 @@
       <button class="logout-button"  @click="logout">Logout</button>
     </nav>
     <router-view :user="user"/>
+    <div class="row sticky" >
+        <button id="install" type="button" class="btn btn-primary">Instalar aplicación</button>
+    </div>
   </div>
+  
 </template>
 
 <script>
@@ -19,6 +23,7 @@ export default {
   name: 'App',
   data() {
     return {
+      eventoDeInstalacion: null,
       user: null,
     };
   },
@@ -40,6 +45,12 @@ export default {
         console.error('Error al cerrar sesión:', error.message);
       }
     },
+  },
+  mounted(){
+    window.addEventListener("beforeinstallprompt", (event) => {
+                this.eventoDeInstalacion = event;
+                console.log("evento de instalación");
+            });
   },
 };
 </script>

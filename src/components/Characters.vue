@@ -69,16 +69,19 @@
                 </div>
             </div>
         </div>
-        </div>
+
+
+</div>
+
 </template>
 <script>
 export default {
   name: "CharacterComponent",
   data() {
     return {
-      characters: [],
-      characterDetails: [],
-      historial:[],
+        characters: [],
+        characterDetails: [],
+        historial:[],
     };
   },
   methods: {
